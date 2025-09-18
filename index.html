@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>مسابقة أسئلة</title>
+  <!-- قم بتعديل مسار الملف إذا اسمته مختلف -->
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <main class="container">
+    <!-- شاشة البداية -->
+    <section class="screen active" id="first-screen" aria-hidden="false">
+      <header>
+        <h1>مسابقة أسئلة</h1>
+        <p>جاوب على الأسئلة وشوف نتيجتك</p>
+      </header>
+      <button id="start-btn" type="button">ابدأ</button>
+    </section>
+
+    <!-- شاشة الاختبار -->
+    <section class="screen" id="quiz-screen" aria-hidden="true">
+      <header class="quiz-header">
+        <div class="question-number" aria-live="polite">
+          سؤال <span id="changed-question">1</span> من <span id="total-questions">10</span>
+          &nbsp;—&nbsp; الدرجة: <span id="score">0</span>
+        </div>
+        <h2 id="question-text">سؤال سيظهر هنا</h2>
+      </header>
+
+      <div id="options" role="radiogroup" aria-labelledby="question-text">
+        <!-- أزرار الإجابات ستُنشأ هنا بالـ JS -->
+      </div>
+
+      <div class="progress-wrapper" aria-hidden="false">
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="next-btn" type="button" disabled>التالي</button>
+      </div>
+    </section>
+
+    <!-- شاشة النتيجة -->
+    <section class="screen" id="result-screen" aria-hidden="true">
+      <h2>النتيجة</h2>
+      <p>أنت أحرزت: <strong id="final-score">0</strong> من <span id="total-possible">0</span></p>
+      <button id="restart-btn" type="button">إعادة المحاولة</button>
+    </section>
+  </main>
+</body>
+</html>
